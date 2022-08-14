@@ -121,6 +121,10 @@ class OpenWebRxReceiverClient(OpenWebRxClient, SdrSourceEventClient):
         "start_freq",
         "center_freq",
         "initial_squelch_level",
+        "default_time_tick",
+        "default_sec_fft_offset_db",
+        "ts_start",
+        "default_ret_step",        
         "sdr_id",
         "profile_id",
         "squelch_auto_margin",
@@ -457,6 +461,7 @@ class MapConnection(OpenWebRxClient):
             "receiver_gps",
             "map_position_retention_time",
             "receiver_name",
+            "callsign_url",
         )
         filtered_config.wire(self.write_config)
 

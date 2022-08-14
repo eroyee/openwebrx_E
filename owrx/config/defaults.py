@@ -33,6 +33,9 @@ defaultConfig = PropertyLayer(
                         samp_rate=2400000,
                         start_freq=439275000,
                         start_mod="nfm",
+                        default_time_tick=30,
+                        ts_start = "rhs",
+			default_ret_step = 5,
                     ),
                     "2m": PropertyLayer(
                         name="2m",
@@ -41,6 +44,9 @@ defaultConfig = PropertyLayer(
                         samp_rate=2048000,
                         start_freq=145725000,
                         start_mod="nfm",
+                        default_time_tick=30,
+                        ts_start = "rhs",
+			default_ret_step = 5,                        
                     ),
                 }
             ),
@@ -173,4 +179,5 @@ defaultConfig = PropertyLayer(
     # pskreporter_antenna_information=None,
     wsprnet_enabled=False,
     wsprnet_callsign="N0CALL",
+    callsign_url="https://www.qrz.com/db/{}",   
 ).readonly()

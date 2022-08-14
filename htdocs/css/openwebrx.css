@@ -968,7 +968,7 @@ img.openwebrx-mirror-img
     /*margin: -10px -10px 10px -10px;*/
     margin: -10px -10px 0px -10px;
     border-radius: 15px;
-    height: 150px;
+    height: 300px;
     background-color: #333;
     position: relative;
     overflow: hidden;
@@ -1456,6 +1456,7 @@ img.openwebrx-mirror-img
 #openwebrx-panel-digimodes[data-mode="fst4"]   #openwebrx-digimode-content-container,
 #openwebrx-panel-digimodes[data-mode="fst4w"]  #openwebrx-digimode-content-container,
 #openwebrx-panel-digimodes[data-mode="q65"]    #openwebrx-digimode-content-container,
+#openwebrx-panel-digimodes[data-mode="spectrum"]    #openwebrx-digimode-content-container,
 #openwebrx-panel-digimodes[data-mode="ft8"]    #openwebrx-digimode-select-channel,
 #openwebrx-panel-digimodes[data-mode="wspr"]   #openwebrx-digimode-select-channel,
 #openwebrx-panel-digimodes[data-mode="jt65"]   #openwebrx-digimode-select-channel,
@@ -1466,7 +1467,8 @@ img.openwebrx-mirror-img
 #openwebrx-panel-digimodes[data-mode="js8"]    #openwebrx-digimode-select-channel,
 #openwebrx-panel-digimodes[data-mode="fst4"]   #openwebrx-digimode-select-channel,
 #openwebrx-panel-digimodes[data-mode="fst4w"]  #openwebrx-digimode-select-channel,
-#openwebrx-panel-digimodes[data-mode="q65"]    #openwebrx-digimode-select-channel
+#openwebrx-panel-digimodes[data-mode="q65"]    #openwebrx-digimode-select-channel,
+#openwebrx-panel-digimodes[data-mode="spectrum"]   #openwebrx-digimode-select-channel
 {
     display: none;
 }
@@ -1484,6 +1486,12 @@ img.openwebrx-mirror-img
 #openwebrx-panel-digimodes[data-mode="q65"]    #openwebrx-digimode-canvas-container
 {
     height: 200px;
+    margin: -10px;
+}
+
+#openwebrx-panel-digimodes[data-mode="spectrum"]    #openwebrx-digimode-canvas-container
+{
+    height: 400px;
     margin: -10px;
 }
 

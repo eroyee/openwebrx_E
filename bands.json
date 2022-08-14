@@ -52,7 +52,7 @@
   },
   {
     "name": "60m",
-    "lower_bound": 5351500,
+    "lower_bound": 5280000,
     "upper_bound": 5366500,
     "frequencies": {
       "ft8": 5357000,
@@ -183,7 +183,7 @@
   },
   {
     "name": "4m",
-    "lower_bound": 70150000,
+    "lower_bound": 70050000,
     "upper_bound": 70200000,
     "frequencies": {
       "wspr": 70091000
@@ -225,7 +225,7 @@
   },
   {
     "name": "13cm",
-    "lower_bound": 2320000000,
+    "lower_bound": 2300000000,
     "upper_bound": 2450000000,
     "frequencies": {
       "q65": [2301065000, 2304065000, 2320065000]

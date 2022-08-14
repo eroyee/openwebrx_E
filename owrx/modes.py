@@ -99,6 +99,12 @@ class Modes(object):
         AnalogMode("lsb", "LSB", bandpass=Bandpass(-3000, -300)),
         AnalogMode("usb", "USB", bandpass=Bandpass(300, 3000)),
         AnalogMode("cw", "CW", bandpass=Bandpass(700, 900)),
+        AnalogMode("sp50", "SP50", bandpass=Bandpass(-25000, 25000)),
+        AnalogMode("sp25", "SP25", bandpass=Bandpass(-12500, 12500)),
+        AnalogMode("sp15", "SP15", bandpass=Bandpass(-7500, 7500)), 
+        AnalogMode("sp10", "SP10", bandpass=Bandpass(-5000, 5000)),
+        AnalogMode("sp5", "SP5", bandpass=Bandpass(-2500, 2500)),
+        AnalogMode("sp2", "SP2", bandpass=Bandpass(-1000, 1000)),                    
         AnalogMode("dmr", "DMR", bandpass=Bandpass(-4000, 4000), requirements=["digital_voice_digiham"], squelch=False),
         AnalogMode(
             "dstar", "D-Star", bandpass=Bandpass(-3250, 3250), requirements=["digital_voice_digiham"], squelch=False
@@ -130,6 +136,14 @@ class Modes(object):
             service=True,
             squelch=False,
         ),
+        DigitalMode(
+            "spectrum",
+            "Spectrum",
+            underlying=["sp50","sp25","sp15","sp10","sp5","sp2","nfm", "usb", "lsb"],        
+            requirements=["packet"],
+            service=False,
+            squelch=False,
+        ),        
         DigitalMode(
             "pocsag",
             "Pocsag",

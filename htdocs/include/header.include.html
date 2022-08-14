@@ -1,20 +1,34 @@
-<div class="webrx-top-container">
-    <div class="webrx-top-bar">
-<!--        <a href="https://www.openwebrx.de/" target="_blank"><svg viewBox="0 0 591 100" class="webrx-top-logo"><title>Visit the OpenWebRX homepage</title><use xlink:href="${document_root}static/gfx/svg-defs.svg#top-logo"></use></svg></a>
+<!--  several changes to support top bar menu buttons hiding and black_mod by a -  by I8FUCdmin settings -->
+<div class=${black_mod} id=${black_mod}  >
+    <div id="top_bar_buttons" class="webrx-top-bar">
+       <a href="https://www.openwebrx.de/" target="_blank"><svg viewBox="0 0 591 100" class="webrx-top-logo"><title>Visit the OpenWebRX homepage</title><use xlink:href="${document_root}static/gfx/svg-defs.svg#top-logo"></use></svg></a>
         <img class="webrx-rx-avatar openwebrx-photo-trigger" src="${document_root}static/gfx/openwebrx-avatar.png" alt="Receiver avatar"/>
         <div class="webrx-rx-texts openwebrx-photo-trigger">
             <h1 class="webrx-rx-title">${receiver_name}</h1>
             <div class="webrx-rx-desc">${receiver_location} | Loc: ${locator}, ASL: ${receiver_asl} m</div>
         </div>
---> 
        
     <section class="openwebrx-main-buttons">
-            <div class="button" data-toggle-panel="openwebrx-panel-status"><svg viewBox="0 0 80 80"><use xlink:href="${document_root}static/gfx/svg-defs.svg#panel-status"></use></svg><br/>Status</div>
-            <div class="button" data-toggle-panel="openwebrx-panel-log"><svg viewBox="0 0 80 80"><use xlink:href="${document_root}static/gfx/svg-defs.svg#panel-log"></use></svg><br/>Log</div>
-            <div class="button" data-toggle-panel="openwebrx-panel-receiver"><svg viewBox="0 0 80 80"><use xlink:href="${document_root}static/gfx/svg-defs.svg#panel-receiver"></use></svg><br/>Receiver</div>
-<!--            <a class="button" href="${document_root}map" target="openwebrx-map"><svg viewBox="0 0 80 80"><use xlink:href="${document_root}static/gfx/svg-defs.svg#panel-map"></use></svg><br/>Map</a>
-            <a class="button" href="${document_root}settings" target="openwebrx-settings"><svg viewBox="0 0 80 80"><use xlink:href="${document_root}static/gfx/svg-defs.svg#panel-settings"></use></svg><br/>Settings</a>
--->
+      <!-- pseudo-session-timeout and rx use policy page display feature by I8FUC -->
+<p id="pstt"></p>
+<script>
+  var path = window.location.pathname;
+  var page = path.split("/").pop();
+//  console.log( page );
+  if ( page === ""){
+    document.getElementById("pstt").innerHTML =  "<meta http-equiv=\"refresh\" content=\"${pseudo_session_timeout}; url=${rx_usage_policy_page}\"> ";
+    }
+  else{
+     document.getElementById("pstt").innerHTML = "" ;
+     };
+</script>
+ 
+            <dev  class="button" id=${status_button}   data-toggle-panel="openwebrx-panel-status"><svg viewBox="0 0 80 80"><use xlink:href="${document_root}static/gfx/svg-defs.svg#panel-status"></use></svg><br/>Status</dev>
+            <dev  class="button" id=${log_button}   data-toggle-panel="openwebrx-panel-log"><svg viewBox="0 0 80 80"><use xlink:href="${document_root}static/gfx/svg-defs.svg#panel-log"></use></svg><br/>Log</dev>
+            <dev  class="button" id=${receiver_button}   data-toggle-panel="openwebrx-panel-receiver"><svg viewBox="0 0 80 80"><use xlink:href="${document_root}static/gfx/svg-defs.svg#panel-receiver"></use></svg><br/>Receiver</dev>
+            <a    class="button" id=${map_button}   href="${document_root}map" target="openwebrx-map"  ><svg viewBox="0 0 80 80"><use xlink:href="${document_root}static/gfx/svg-defs.svg#panel-map"></use></svg><br/>Map</a> 
+            <a    class="button" id=${settings_button}   href="${document_root}settings" target="openwebrx-settings"><svg viewBox="0 0 80 80"><use xlink:href="${document_root}static/gfx/svg-defs.svg#panel-settings"></use></svg><br/>Settings</a>
+
         </section>
     </div>
     <!--  eroyee for spectrum display -->

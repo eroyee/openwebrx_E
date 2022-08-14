@@ -82,6 +82,8 @@ MODEM 1200
 
 KISSPORT {port}
 AGWPORT off
+LOGDIR /var/log/direwolf_aprs.log
+
         """.format(
             port=self.getPort(), callsign=pm["aprs_callsign"]
         )

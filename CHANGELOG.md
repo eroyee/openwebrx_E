@@ -1,3 +1,17 @@
+**unreleased**
+- Add settings support for ivanmarcus (https://github.com/eroyee/openwebrx_E) _E added feature: top bar pushbuttons hide/show (via setip "Top Bar Panels Toggle Buttons Display")
+- Add settings support for ivanmarcus _E added feature: black background  mode for top bar image
+- Add settings support for ivanmarcus _E added feature: timeseries ( time_tick diagram start side, reticule db spacing, time tick spacing per profile )
+- add per profile secondary_demod_fft_offset_db settings support to align colour mappings for main waterfall and secondary waterfall
+- Add timeseries scale values offset to allign with main and secondary waterfall colour schemes
+- Add new pseudo-demodulator "Spectrum" to allow flexible secondary spectrum use for deep waterfall analysis with step variable bandwidth ( 50 Khz to 2 Khz); this feature help to gain detailed view of small ranges of a wide waterfall ( i.e. 8-10 Mhz with RSP1x devices)
+- Add pseudo-session-timeout via main page index meta http-equiv 
+- Add psedudo-session-timeout setting support via section "Pseudo Session Timeout" (to set landing page and session timeout)
+- add support for direwolf detailed packets logging with history
+- Add support for Mode column in left_panel for digital modes
+- Add support from luarvique (https://github.com/luarvique/openwebrx) for display of bandwitch presently in use on top of waterfall
+- Add support from luarvique (https://github.com/luarvique/openwebrx) for Settings item to configure callsign lookup database for map display
+- Add few corrections to bands.json
 
 **1.2.0-dev_E**
 

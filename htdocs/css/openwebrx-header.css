@@ -1,8 +1,7 @@
 .webrx-top-container {
     position: relative;
     z-index:1000;
-    background-color: #000; /* eroyee; black scheme */
-/*    background-image: url(../gfx/openwebrx-top-photo.jpg); eroyee; black scheme */
+    background-image: url(../gfx/openwebrx-top-photo.jpg);
     background-position-x: center;
     background-position-y: top;
     background-repeat: no-repeat;
@@ -11,6 +10,19 @@
     overflow: hidden;
 }
 
+.webrx-top-container-black {   // by I8FUC to support ivanmarcus black_mod
+    position: relative;
+    z-index:1000;
+    background-color: #000; /* eroyee; black scheme */
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    overflow: hidden;
+}
+
+
 .openwebrx-description-container {
     transition-property: height, opacity;
     transition-duration: 1s;
@@ -18,14 +30,14 @@
     opacity: 0;
     height: 0px;
     margin-top: 0px;
-    /* originally, top-bar + description was 350px */
-    max-height: 283px;
+    /* originally, top-bar + description was 350px then 283 - back to 320  by I8FUC */
+    max-height: 320px;
     overflow: hidden;
 }
 
 .openwebrx-description-container.expanded {
     opacity: 1;
-    height: 238px; /* eroyee dropped from 283 to to 238px incase added to spectrum */
+    height: 283px; /* eroyee dropped from 283 to to 238px in case added to spectrum - back by I8FUC */
 }
 
 /* eroyee add for spectrum display */
@@ -39,8 +51,8 @@
 }
 
 .webrx-top-bar {
-/* eroyee; change height to 40px from 67px */
-    height:40px;
+/* eroyee; change height to 40px from 67px - moved  to 45 by I8FUC */
+    height:45px;
     background: rgba(128, 128, 128, 0.15);
     margin:0;
     padding:0;
@@ -66,8 +78,8 @@
 }
 
 .webrx-top-logo {
-    width: 261px;
-    padding: 12px;
+    width: 235px;  // original 261  by I8FUC to 235 
+    padding: 10px;  // original 12 - moved to 10 by I8FUC
     filter: drop-shadow(0 0 2.5px rgba(0, 0, 0, .9));
     /* overwritten by media queries */
     display: none;
@@ -77,8 +89,8 @@
     background-color: rgba(154, 154, 154, .5);
     margin: 7px;
 
-    width: 46px;
-    height: 46px;
+    width: 66px; 
+    height: 40px;    // original 46px - moved to 40  by I8FUC
     padding: 4px;
     border-radius: 8px;
     box-sizing: content-box;
@@ -113,7 +125,7 @@
 }
 
 .openwebrx-main-buttons .button {
-    display: block;
+  //  display: block;   // by I8FUC to support top bar menu buttons hiding ; will be enabled by javascript
     width: 55px;
     cursor:pointer;
 }

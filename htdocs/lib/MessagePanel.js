@@ -65,6 +65,7 @@ WsjtMessagePanel.prototype.render = function() {
     $(this.el).append($(
         '<table>' +
             '<thead><tr>' +
+                '<th size=4 >Mode</th>' +
                 '<th>UTC</th>' +
                 '<th class="decimal">dB</th>' +
                 '<th class="decimal">DT</th>' +
@@ -106,6 +107,7 @@ WsjtMessagePanel.prototype.pushMessage = function(msg) {
     }
     $b.append($(
         '<tr data-timestamp="' + msg['timestamp'] + '">' +
+        '<td size=4 >' + msg['mode'] + '</td>' +
         '<td>' + pad(t.getUTCHours()) + pad(t.getUTCMinutes()) + pad(t.getUTCSeconds()) + '</td>' +
         '<td class="decimal">' + msg['db'] + '</td>' +
         '<td class="decimal">' + msg['dt'] + '</td>' +
@@ -138,6 +140,7 @@ PacketMessagePanel.prototype.render = function() {
     $(this.el).append($(
         '<table>' +
             '<thead><tr>' +
+                '<th size=4 >Mode </th>' +
                 '<th>UTC</th>' +
                 '<th class="callsign">Callsign</th>' +
                 '<th class="coord">Coord</th>' +
@@ -209,6 +212,7 @@ PacketMessagePanel.prototype.pushMessage = function(msg) {
 
     $b.append($(
         '<tr>' +
+        '<td size=4 >' + msg['mode'] + '</td>' +
         '<td>' + timestamp + '</td>' +
         '<td class="callsign">' + source + '</td>' +
         '<td class="coord">' + link + '</td>' +

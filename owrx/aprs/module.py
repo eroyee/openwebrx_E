@@ -44,7 +44,7 @@ class DirewolfModule(AutoStartModule, DirewolfConfigSubscriber):
 
         # direwolf -c {direwolf_config} -r {audio_rate} -t 0 -q d -q h 1>&2
         self.process = Popen(
-            ["direwolf", "-c", self.direwolfConfigPath, "-r", "48000", "-t", "0", "-q", "d", "-q", "h"],
+            ["direwolf", "-c", self.direwolfConfigPath, "-r", "48000", "-t", "0", "-q", "d", "-q", "h", "-d", "ai" ],
             start_new_session=True,
             stdin=PIPE,
         )

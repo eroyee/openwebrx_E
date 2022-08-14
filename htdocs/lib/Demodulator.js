@@ -13,6 +13,8 @@ Filter.prototype.getLimits = function() {
         max_bw = 100000;
     } else if (this.demodulator.get_modulation() === 'drm') {
         max_bw = 50000;
+    } else if (this.demodulator.get_modulation() === 'spectrum') {
+        max_bw = 50000;
     } else if (this.demodulator.get_modulation() === "freedv") {
         max_bw = 4000;
     } else {
@@ -81,6 +83,14 @@ Envelope.prototype.draw = function(visible_range){
         scale_ctx.fill();
         scale_ctx.globalAlpha = 1;
         scale_ctx.stroke();
+        // start by I8FUC 20220813
+        scale_ctx.lineWidth = 1;
+        scale_ctx.textAlign = "left";
+        scale_ctx.fillText(this.demodulator.high_cut.toString(), to_px + env_att_w, env_h2);
+        scale_ctx.textAlign = "right";
+        scale_ctx.fillText(this.demodulator.low_cut.toString(), from_px - env_att_w, env_h2);
+        scale_ctx.lineWidth = 3;
+        // end by I8FUC    
     }
     if (typeof line !== "undefined") // out of screen?
     {

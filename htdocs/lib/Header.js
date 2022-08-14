@@ -1,14 +1,23 @@
 function Header(el) {
     this.el = el;
-
+    var is_firefox = navigator.userAgent.indexOf("Firefox") ;  // by I8FUC 
+    
     var $buttons = this.el.find('.openwebrx-main-buttons').find('[data-toggle-panel]').filter(function(){
         // ignore buttons when the corresponding panel is not in the DOM
         return $('#' + $(this).data('toggle-panel'))[0];
     });
 
-    $buttons.css({display: 'block'}).click(function () {
+
+    if (navigator.userAgent.indexOf("Firefox") >= 0){  // by I8FUC to support correct top bar buttons hiding on firefox derived browsers
+      $buttons.css({display: 'block'}).click(function () {    
         toggle_panel($(this).data('toggle-panel'));
-    });
+        });
+      }
+    else{
+      $buttons.click(function () {    
+        toggle_panel($(this).data('toggle-panel'));
+        });    
+      };    
 
     this.init_rx_photo();
 };
@@ -30,6 +39,7 @@ Header.prototype.init_rx_photo = function() {
     });
 
     $('.webrx-top-container').find('.openwebrx-photo-trigger').click(this.toggle_rx_photo.bind(this));
+    $('.webrx-top-container-black').find('.openwebrx-photo-trigger').click(this.toggle_rx_photo.bind(this));  // by I8FUC to support ivanmarcus black_mod   
 };
 
 Header.prototype.close_rx_photo = function() {
@@ -64,4 +74,5 @@ $.fn.header = function() {
 
 $(function(){
     $('.webrx-top-container').header();
+    $('.webrx-top-container-black').header();  // by I8FUC to support ivanmarcus black_mod
 });
